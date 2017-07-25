@@ -11,7 +11,4 @@ export default {
 </script>
 
 <style lang="stylus">
-.radio h1{
-  font-size: 3rem
-}
 </style>

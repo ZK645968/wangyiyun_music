@@ -7,7 +7,7 @@ import store from './store'
 import VueMaterial from 'vue-material'
 import 'vue-material/dist/vue-material.css'
 import VueAwesomeSwiper from 'vue-awesome-swiper'
-
+import 'babel-polyfill';//解决IE promise问题
 Vue.use(VueAwesomeSwiper);
 Vue.use(VueMaterial);
 Vue.material.registerTheme({

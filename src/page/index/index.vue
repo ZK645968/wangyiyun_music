@@ -30,7 +30,14 @@
       } 
     },
     watch:{
-
+      $route (to, from) {
+        const arr = ['recommend', 'songlist','radio','top']
+        const toIndex = arr.indexOf(to.path.split('/').pop())
+        console.log(to.path.split('/'))
+        const fromIndex = arr.indexOf(from.path.split('/').pop())
+        this.transitionName = toIndex < fromIndex ? 'slide-right' : 'slide-left'
+        console.log(this.transitionName)
+      }
     }
   }
 </script>

@@ -56,6 +56,15 @@
 
     <div class="recommend-list">
       <list-title :title="'独家放送'"></list-title>
+      <ul class="recl-list3">
+        <li class="recom-list-item3" v-for="(item,index) in dujiaList" :key="index" @click="toSongListDetail(item.id, item)">
+          <div> 
+            <img  v-if="index < 2" :src="item.sPicUrl" alt="">
+            <img v-else :src="item.picUrl" alt="">
+          </div>
+          <p>{{item.name}}</p>
+        </li>
+      </ul>
     </div>
   </div>
 </template>
@@ -83,6 +92,7 @@ export default {
   created() {
     this.getBanner()
     this.getRecommendList()
+    this.getDujia()
   },
   mounted() {
     this.$nextTick(() => {
@@ -92,18 +102,24 @@ export default {
   methods:{
     getBanner() {
       axios.get('/api/banner').then(res => {
-        console.log('轮播信息', res.data)
+        console.log('轮播信息====================', res.data)
         this.banners = res.data.banners;
       })
     },
     getRecommendList() {
       axios.get('/api/personalized').then(res => {
-          console.log('', res.data.result)
+          console.log('推荐歌单信息==================', res.data.result)
           this.recommendList = res.data.result
         })
     },
+    getDujia(){
+      axios.get('/api/personalized/privatecontent').then( res => {
+        console.log('独家内容=====================', res.data.result)
+        this.dujiaList = res.data.result
+      })
+    },
     toSongListDetail(id, obj){
-      this.router.push({path: '/playlistdetail' + id})
+      this.$router.push({path: '/playlistdetail/' + id})
       this.$store.dispatch('curPlaylistDetail', obj)
     }
   },
@@ -163,6 +179,30 @@ export default {
           text-overflow: ellipsis;
           display: -webkit-box;
           -webkit-line-clamp: $n;
-          -webkit-box-orient: vertical;
-
+          -webkit-box-orient: vertical
+  .recommend-list  
+    .recl-list3
+      display flex
+      flex-wrap wrap
+      .recom-list-item3
+        width 3.73rem
+        margin-bottom .2rem
+        margin-right 1px
+        &:nth-child(2n)
+          margin-right 0
+        &:nth-child(3n)
+          width 100%
+        div
+          height 2.48rem
+          img
+            height 100%
+            width 100%
+        p
+          padding 5px
+          font-size .25rem
+          line-height 1.2
+          overflow hidden
+          text-overflow: ellipsis;
+          display: -webkit-box;
+          -webkit-box-orient: vertical
 </style>

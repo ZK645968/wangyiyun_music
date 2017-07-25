@@ -1,5 +1,10 @@
-import *  as type from './mutations-type'
+import *  as types from './mutations-type'
 
 export default{
-  
+  curPlaylistDetail({commit}, obj) {
+    commit(types.CUR_PLAYLIST_INFO, obj)
+  },
+  curPlayMusic({commit}, arr) {
+    commit(types.CUR_PLAY_MUSIC, arr)
+  },
 }
