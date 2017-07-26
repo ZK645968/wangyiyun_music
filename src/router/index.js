@@ -8,6 +8,9 @@ import Top from '../page/index/Top.vue'
 import Radio from '../page/index/Radio.vue'
 import SongList from '../page/index/SongList.vue'
 
+//按需加载
+// const Songlisy = resolve => require(['../components/ListTitle.vue'],resolve)
+
 import Home from '../page/home/home.vue'
 import Contact from '../page/contact/contact.vue'
 import PlayListDetail from '../page/PlayListDetail.vue'

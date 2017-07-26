@@ -129,7 +129,8 @@ export default {
 }
 </script>
 
-<style lang="stylus">
+<style scoped lang="stylus" rel="stylesheet/stylus">
+@import '../../assets/css/base.styl'
   .today-recommend
     display flex
     align-items center
@@ -137,22 +138,17 @@ export default {
     border-bottom 1px solid #eee
     overflow hidden
     .recommend-item 
-      display flex
-      align-items center
-      justify-content center
+      dfcc()
       flex-direction column
       flex 1
       .circle-b
-        display flex
-        justify-content center
-        align-items center
-        height .95rem
-        width .95rem 
+        dfcc()
+        wh(.95rem)
         border-radius 50%
-        border 1px solid #d33a31
+        border 1px solid baseColor
         .iconfont 
           font-size 0.5rem
-          color #d33a31
+          color baseColor
       .itemname
         font-size .2rem  
         margin-top  8px 
@@ -169,17 +165,12 @@ export default {
         div
           height 2.48rem
           img
-            height 100%
-            width 100%
+            wh(100%)
         p
           padding 5px
           font-size .25rem
           line-height 1.2
-          overflow hidden
-          text-overflow: ellipsis;
-          display: -webkit-box;
-          -webkit-line-clamp: $n;
-          -webkit-box-orient: vertical
+          overhide(2)
   .recommend-list  
     .recl-list3
       display flex
@@ -195,14 +186,10 @@ export default {
         div
           height 2.48rem
           img
-            height 100%
-            width 100%
+            wh(100%)
         p
           padding 5px
           font-size .25rem
-          line-height 1.2
-          overflow hidden
-          text-overflow: ellipsis;
-          display: -webkit-box;
-          -webkit-box-orient: vertical
+          line-height 1.3
+          overhide(2)
 </style>

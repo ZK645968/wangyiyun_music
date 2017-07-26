@@ -42,7 +42,8 @@
   }
 </script>
 
-<style lang="stylus">
+<style scoped lang="stylus" rel="stylesheet/stylus">
+@import '../../assets/css/base.styl'
   .index-tab
     display flex
     li
@@ -62,9 +63,9 @@
         color: #666
         border-bottom: 2px solid #fff
         &:hover 
-          color #d33a31
+          color baseColor
           text-decoration: none
-          border-bottom-color #d33a31
+          border-bottom-color baseColor
   .md-button-toggle.index 
     // position: fixed;
     // top: .96rem
@@ -78,9 +79,9 @@
       border-bottom: 3px solid #fff;
       background-color: #fff;
     .md-toggle 
-      color:#d33a31 !important
+      color:baseColor !important
       background-color: #fff !important;
-      border-bottom: 3px solid #d33a31;
+      border-bottom: 3px solid baseColor;
     
   /* 上面是为了保证滑动的时候不出现抖动情况 */
   .index-child-view {

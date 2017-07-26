@@ -8,10 +8,11 @@
   }
 </script>
 
-<style lang="stylus">
+<style scoped lang="stylus" rel="stylesheet/stylus">
+@import '../assets/css/base.styl'
   .list-title
     margin .26rem 0
-    border-left .06rem solid #d33a31
+    border-left .06rem solid baseColor
     font-size .28rem
     text-indent .2rem
     .iconfont

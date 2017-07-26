@@ -111,6 +111,8 @@ export default {
 }
 </script>
 
-<style>
-  
+<style scoped lang="stylus" rel="stylesheet/stylus">
+@import '../assets/css/base.styl'
+  .PlayListDetail
+    background baseColor
 </style>

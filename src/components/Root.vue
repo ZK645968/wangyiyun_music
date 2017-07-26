@@ -35,7 +35,7 @@
 
 <script>
 import '../assets/css/font.styl'
-import '../assets/css/base.styl';
+
 
 export default {
  data () {
@@ -57,20 +57,20 @@ export default {
 }
 </script>
 
-<style lang="stylus">
-  .root
-    position fixed
-    top 0;
-    left 0
-    right 0
+<style lang="stylus"  rel="stylesheet/stylus">
+@import '../assets/css/base.styl'
+  .root_
     z-index 100
+    .md-dense
+      background baseColor !important
     a
       color rgba(255,255,255,.85) !important
     .md-title
       display flex
       justify-content center
       .iconfont
-        color #e58983
+        // color #e58983
+        color rgba(255,255,255,.5)
         margin-right 0.5rem
         &.active
           color #fff
