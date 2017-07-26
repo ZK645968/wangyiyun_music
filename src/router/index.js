@@ -17,14 +17,20 @@ import PlayListDetail from '../page/PlayListDetail.vue'
 Vue.use(Router)
 
 export default new Router({
+  mode:'history',
   routes: [
     {
       path: '/',
       redirect: '/root/index'
     },
     {
+      name:'login',
+      path:'/login',
+      component: require('../page/login/login.vue')
+    },
+    {
       path:'/root',
-      name: 'Root',
+      name: 'root',
       component: Root,
       children: [
         {
@@ -33,6 +39,7 @@ export default new Router({
           redirect:'index/recommend',
           children:[
             {
+              name:'shouye',
               path: 'recommend',
               component: Recommend
             },
