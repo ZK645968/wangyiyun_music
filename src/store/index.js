@@ -7,6 +7,7 @@ import actions from './actions'
 Vue.use(Vuex)
 
 const state = {
+  userid:'',
   curPlaylistDetail:{}, //当前播放列表的详细信息
   curPlayMusic: {},     //当前播放的音乐
   playing: false,       //是否在播放

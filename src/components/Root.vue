@@ -36,7 +36,6 @@
 <script>
 import '../assets/css/font.styl'
 
-
 export default {
  data () {
    return {

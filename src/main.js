@@ -8,7 +8,7 @@ import VueMaterial from 'vue-material'
 import 'vue-material/dist/vue-material.css'
 import VueAwesomeSwiper from 'vue-awesome-swiper'
 import 'babel-polyfill';//解决ES6不兼容
-import fastclick from 'fastclick'
+// import fastclick from 'fastclick'
 
 Vue.use(VueAwesomeSwiper);
 Vue.use(VueMaterial);
@@ -21,7 +21,7 @@ Vue.material.registerTheme({
   }
 })
 
-fastclick.attach(document.body)  // 解决移动端点击延迟300毫秒
+// fastclick.attach(document.body)  // 解决移动端点击延迟300毫秒
 
 Vue.config.productionTip = false
 

@@ -20,6 +20,8 @@
 </template>
 
 <script>
+import axios from 'axios'
+// import store from '../../store/index'
 export default {
   data(){
     return{
@@ -29,9 +31,23 @@ export default {
   },
   methods:{
     login(){
-      console.log(this.user)
-      console.log(this.pass)
-      this.$router.push({name:'shouye'})
+      // console.log(this.user)
+      // console.log(this.pass)
+      axios.get(`/api/login/cellphone?phone=${this.user}&password=${this.pass}`).then((res) => {
+        console.log(res.data)
+        if(res.data.code != 200){
+          console.log("用户名或密码错误")
+          // 264491262
+        }else{
+          console.log("登录成功")
+          this.$store.dispatch('setUserId',res.data.account.id)
+          this.$router.push({name:'shouye'})
+        }
+      }).catch((err) => {
+        console.log(err)
+      })
+
+      // this.$router.push({name:'shouye'})
     }
   }
 }

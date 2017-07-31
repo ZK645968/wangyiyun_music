@@ -17,12 +17,15 @@
 <script>
   import axios from 'axios'
   import {mapState} from 'vuex'
-
+  // import store from '../../store/index'
   export default {
     data () { 
       return {
         transitionName: ''
       }
+    },
+    mounted(){
+      console.log(this.$store.state.userid, 'id')
     },
     methods:{
       indexTab(tab) {
@@ -33,10 +36,10 @@
       $route (to, from) {
         const arr = ['recommend', 'songlist','radio','top']
         const toIndex = arr.indexOf(to.path.split('/').pop())
-        console.log(to.path.split('/'))
+        // console.log(to.path.split('/'))
         const fromIndex = arr.indexOf(from.path.split('/').pop())
         this.transitionName = toIndex < fromIndex ? 'slide-right' : 'slide-left'
-        console.log(this.transitionName)
+        // console.log(this.transitionName)
       }
     }
   }

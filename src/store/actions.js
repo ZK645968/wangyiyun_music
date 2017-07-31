@@ -7,4 +7,7 @@ export default{
   curPlayMusic({commit}, arr) {
     commit(types.CUR_PLAY_MUSIC, arr)
   },
+  setUserId({commit}, id){
+    commit(types.SET_USERID, id)
+  }
 }
