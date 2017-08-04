@@ -42,7 +42,7 @@ export default {
         .iconfont
           padding-left 5px
           font-size .4rem
-    .create-list
+    .create-list  
       width 100%
       // background-color black
       .crea-list-head
