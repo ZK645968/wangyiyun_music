@@ -62,7 +62,7 @@
         </div>
         <div class="song-item" v-for="(item,index) in playlist.tracks" :key="index">
           <div class="song-index">{{index + 1}}</div>
-          <div class="song-info" @click="playMusic(item,id)">
+          <div class="song-info" @click="playMusic(item.id)">
             <p class="song-name">{{item.name}}
               <span class="song-desc" v-show="item.alia[0]">{{item.alia[0]}}</span>
             </p>
@@ -268,16 +268,19 @@ export default {
         overflow hidden
         .song-name
           line-height: 1.2
-          font-size .28rem
+          font-size .3rem
+          margin-bottom 3px
           .song-desc
             color #e6e6e6
             font-size .24rem
         .song-singer
           line-height: 1.2
+          font-size .24rem
       .song-option
         display flex
         justify-content center
         align-items center
+        word-break break-all
         width .9rem
         color #e6e6e6
 </style>

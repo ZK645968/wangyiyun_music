@@ -8,7 +8,7 @@
   }
 </script>
 
-<style scoped lang="stylus" rel="stylesheet/stylus">
+<style scoped lang="stylus" scoped rel="stylesheet/stylus">
 @import '../assets/css/base.styl'
   .list-title
     margin .26rem 0
